@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Vista Tree -->
+    <record id="view_aulastock_item_tree" model="ir.ui.view">
+        <field name="name">aulastock.item.tree</field>
+        <field name="model">aulastock.item</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="category"/>
+                <field name="quantity"/>
+                <field name="price"/>
+                <field name="purchase_date"/>
+                <field name="active"/>
+                <field name="location_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción -->
+    <record id="action_aulastock_item" model="ir.actions.act_window">
+        <field name="name">Material</field>
+        <field name="res_model">aulastock.item</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menús -->
+    <menuitem id="menu_aula_root" name="Aula" sequence="10"/>
+    <menuitem id="menu_aulastock_root" name="AulaStock" parent="menu_aula_root" sequence="10"/>
+    <menuitem id="menu_aulastock_item" name="Material" parent="menu_aulastock_root" action="action_aulastock_item" sequence="10"/>
+    <menuitem id="menu_aulastock_location" name="Ubicaciones" parent="menu_aulastock_root" action="action_aulastock_location" sequence="20"/>
+</odoo>
