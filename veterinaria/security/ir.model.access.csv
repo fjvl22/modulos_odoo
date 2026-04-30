@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_dueno,access_dueno,model_veterinaria_dueno,,1,1,1,1
+access_mascota,access_mascota,model_veterinaria_mascota,,1,1,1,1
