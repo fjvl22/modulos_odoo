@@ -80,7 +80,7 @@
     <record id="action_mascota" model="ir.actions.act_window">
         <field name="name">Mascotas</field>
         <field name="res_model">veterinaria.mascota</field>
-        <field name="view_mode">tree,foem</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="menu_veterinaria_root" name="Veterinaria"/>
