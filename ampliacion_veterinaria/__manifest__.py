@@ -1,7 +1,7 @@
 {
     'name': 'Veterinaria',
-    'version': '1.0',
-    'summary': 'Gestión de mascotas y dueños en veterinaria',
+    'version': '2.0',
+    'summary': 'Versión ampliada de la gestión de mascotas y dueños en veterinaria',
     'author': 'odoo17',
     'category': 'Services',
     'depends': ['base'],

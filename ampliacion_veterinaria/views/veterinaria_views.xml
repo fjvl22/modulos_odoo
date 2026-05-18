@@ -5,6 +5,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="nombre"/>
+                <field name="dni"/>
                 <field name="telefono"/>
                 <field name="email"/>
             </tree>
@@ -19,17 +20,20 @@
                 <sheet>
                     <group>
                         <field name="nombre"/>
+                        <field name="dni"/>
                         <field name="telefono"/>
                         <field name="email"/>
+                        <field name="direccion"/>
                     </group>
 
                     <notebook>
                         <page string="Mascotas">
                             <field name="mascota_ids">
-                                <tree>
+                                <tree editable="bottom">
                                     <field name="nombre"/>
                                     <field name="especie"/>
                                     <field name="edad"/>
+                                    <field name="peso"/>
                                 </tree>
                             </field>
                         </page>
@@ -48,6 +52,8 @@
                 <field name="nombre"/>
                 <field name="especie"/>
                 <field name="edad"/>
+                <field name="peso"/>
+                <field name="vacunado"/>
                 <field name="dueno_id"/>
             </tree>
         </field>
@@ -59,13 +65,22 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+
                     <group>
                         <field name="nombre"/>
                         <field name="especie"/>
-                        <field name="edad"/>
+                        <field name="fecha_nacimiento"/>
+                        <field name="edad" readonly="1"/>
+                        <field name="peso"/>
+                        <field name="vacunado"/>
+                        <field name="fecha_registro" readonly="1"/>
                         <field name="dueno_id"/>
+                    </group>
+
+                    <group>
                         <field name="observaciones"/>
                     </group>
+
                 </sheet>
             </form>
         </field>

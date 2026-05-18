@@ -1,0 +1,208 @@
+INFORME TÉCNICO
+Ampliación funcional del módulo de Veterinaria en Odoo
+1. Introducción
+
+El presente documento describe la ampliación funcional realizada sobre el módulo de gestión de veterinaria desarrollado previamente en Odoo.
+
+El objetivo principal de esta ampliación ha sido mejorar el sistema inicial incorporando nuevas funcionalidades relacionadas con:
+
+Automatización de procesos
+Validación de datos
+Ampliación de información almacenada
+Mejora de la integridad de los registros
+
+La ampliación desarrollada transforma el módulo inicial en una solución más robusta, organizada y cercana a un entorno real de gestión veterinaria.
+
+2. Objetivos de la ampliación
+
+Los objetivos planteados para esta ampliación han sido:
+
+Añadir nuevos campos informativos
+Implementar validaciones automáticas
+Automatizar cálculos y procesos
+Mejorar la organización interna del código
+Mantener la integridad y coherencia de los datos
+3. Mejoras implementadas
+
+Durante la ampliación del módulo se realizaron diversas mejoras tanto a nivel funcional como estructural.
+
+4. Nuevos campos añadidos
+4.1 Modelo Dueño
+
+Se añadieron nuevos campos para ampliar la información de los propietarios.
+
+Nuevos campos:
+DNI
+Dirección
+Objetivo:
+
+Permitir una identificación más precisa de cada dueño y almacenar información de contacto adicional.
+
+4.2 Modelo Mascota
+
+Se ampliaron los datos registrados para cada mascota.
+
+Nuevos campos:
+Fecha de nacimiento
+Peso
+Estado de vacunación
+Fecha de registro automática
+Objetivo:
+
+Mejorar el seguimiento de las mascotas y disponer de información veterinaria básica.
+
+5. Automatización de procesos
+
+Uno de los principales objetivos de la ampliación fue automatizar ciertas tareas para reducir errores manuales.
+
+5.1 Cálculo automático de edad
+
+La edad de la mascota ya no se introduce manualmente.
+
+El sistema calcula automáticamente la edad utilizando la fecha de nacimiento registrada.
+
+Funcionamiento:
+El usuario introduce la fecha de nacimiento
+Odoo calcula automáticamente la edad
+Ventajas:
+Evita errores humanos
+Mantiene la información actualizada
+Reduce tareas manuales
+5.2 Fecha de registro automática
+
+Se implementó un sistema que registra automáticamente la fecha en la que se crea una mascota.
+
+Funcionamiento:
+Al crear un registro, Odoo asigna automáticamente la fecha actual
+Ventajas:
+Permite control temporal de registros
+Facilita auditorías y seguimiento
+6. Validaciones implementadas
+
+Se añadieron restricciones y validaciones para garantizar la calidad de los datos almacenados.
+
+6.1 Validación de peso
+
+Se implementó una validación que impide introducir pesos menores o iguales a cero.
+
+Objetivo:
+
+Evitar datos incoherentes o inválidos.
+
+Resultado:
+
+El sistema muestra un mensaje de error si el valor no es válido.
+
+6.2 Restricción de DNI único
+
+Se añadió una restricción SQL para evitar dueños duplicados.
+
+Funcionamiento:
+No se permite registrar dos dueños con el mismo DNI
+Objetivo:
+
+Garantizar la unicidad de los propietarios.
+
+7. Reorganización del código
+
+Además de las mejoras funcionales, se reorganizó la estructura interna del módulo.
+
+7.1 Separación de modelos
+
+Los modelos fueron separados en distintos archivos:
+
+dueno.py
+mascota.py
+Objetivo:
+
+Mejorar la claridad y mantenimiento del código.
+
+7.2 Separación de validaciones
+
+Las validaciones y lógica adicional se trasladaron a un archivo independiente:
+
+validaciones.py
+Ventajas:
+Código más limpio
+Mayor modularidad
+Mejor mantenimiento futuro
+8. Pruebas realizadas
+
+Se realizaron múltiples pruebas para verificar el correcto funcionamiento de las nuevas funcionalidades.
+
+8.1 Prueba de cálculo automático
+Acción:
+
+Se registró una mascota indicando su fecha de nacimiento.
+
+Resultado:
+
+La edad se calculó automáticamente de forma correcta.
+
+✔️ Funcionamiento correcto
+
+8.2 Prueba de validación de peso
+Acción:
+
+Se intentó registrar una mascota con peso negativo.
+
+Resultado:
+
+El sistema bloqueó la operación mostrando un mensaje de error.
+
+✔️ Validación correcta
+
+8.3 Prueba de DNI duplicado
+Acción:
+
+Se intentó registrar dos dueños con el mismo DNI.
+
+Resultado:
+
+La base de datos rechazó el segundo registro.
+
+✔️ Restricción correcta
+
+8.4 Prueba de fecha automática
+Acción:
+
+Se creó una nueva mascota.
+
+Resultado:
+
+La fecha de registro se generó automáticamente.
+
+✔️ Automatización correcta
+
+9. Resultados obtenidos
+
+La ampliación desarrollada permitió mejorar considerablemente el módulo inicial.
+
+Se consiguió:
+
+Mayor control sobre los datos
+Automatización de tareas repetitivas
+Mejor organización del código
+Validaciones para evitar errores
+Estructura más profesional y escalable
+10. Conclusión
+
+La ampliación funcional realizada sobre el módulo de veterinaria permitió transformar una aplicación CRUD básica en un sistema más completo y robusto.
+
+La incorporación de validaciones, cálculos automáticos y nuevas estructuras de datos mejora significativamente la experiencia de uso y la integridad de la información almacenada.
+
+Además, la reorganización interna del código mediante separación de modelos y validaciones proporciona una arquitectura más limpia y mantenible, siguiendo buenas prácticas de desarrollo en Odoo.
+
+11. Posibles mejoras futuras
+
+Como futuras ampliaciones del sistema se podrían implementar:
+
+Historial clínico de mascotas
+Gestión de citas veterinarias
+Sistema de vacunaciones
+Facturación
+Gestión de tratamientos médicos
+Panel estadístico
+12. Conclusión final
+
+La ampliación desarrollada cumple satisfactoriamente los objetivos planteados, aportando nuevas funcionalidades, automatización y validaciones que mejoran tanto la calidad técnica del proyecto como su utilidad práctica.
